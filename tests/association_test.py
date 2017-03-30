@@ -17,6 +17,8 @@ class GenericAssociationTester():
 
         associations, distances = self.assoc_algo.associate(reading, reference)
 
+        print(associations)
+
         self.assertTrue(np.all(associations[:,0] == associations[:,1]))
         self.assertFalse(np.any(distances)) # All distances are 0.0
 
@@ -33,6 +35,7 @@ class GenericAssociationTester():
         associations, distances = self.assoc_algo.associate(reading, reference)
 
         self.assertTrue(np.allclose(distances, np.sqrt(3 * 0.2 * 0.2)))
+        self.assertTrue(np.all(np.equal(np.array([5,1]), distances.shape)))
 
 
 class TestKdTreeAssociation(unittest.TestCase,GenericAssociationTester):

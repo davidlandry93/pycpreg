@@ -19,7 +19,8 @@ class PointAssociationAlgorithm():
 
 class BruteForcePointAssociationAlgorithm(PointAssociationAlgorithm):
     def associate(self, reading, reference):
-        associations = np.empty(reading.shape[1])
+        n_points = reading.shape[1]
+        associations = np.empty(n_points)
 
         # Create a matrix of the distances from every reading point to every reference point
         distances = np.empty((reading.shape[1], reference.shape[1]))
@@ -35,7 +36,7 @@ class BruteForcePointAssociationAlgorithm(PointAssociationAlgorithm):
 
         distances = np.min(distances, axis=1)
 
-        return associations, distances
+        return associations, distances.reshape((n_points, 1))
 
 
 class KdTreePointAssociationAlgorithm(PointAssociationAlgorithm):

@@ -17,7 +17,7 @@ class QuantileOutlierFilterAlgorithm(OutlierFilterAlgorithm):
         self.percentage_to_keep = percentage_to_keep
 
     def filter(self, associations, errors):
-        permutation = np.argsort(errors)
+        permutation = np.argsort(errors, axis=1)
         associations = associations[permutation]
 
         n_points_to_keep = int(associations.shape[0] * self.percentage_to_keep)
