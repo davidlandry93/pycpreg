@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+from pycpreg.outlier import QuantileOutlierFilterAlgorithm, OutlierFilterAlgorithm
+from pycpreg.error_function import ICPErrorFunction, PointToPointICPErrorFunction, PointToPlaneICPErrorFunction
+from pycpreg.association import PointAssociationAlgorithm, BruteForcePointAssociationAlgorithm, KdTreePointAssociationAlgorithm, LibnaboPointAssociationAlgorithm
+from pycpreg.icp import ICPAlgorithm
