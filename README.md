@@ -1,5 +1,6 @@
 # pycpreg
-Library for point cloud registration under the ICP algorithm in python
+Library for point cloud registration under the ICP algorithm in python.
+Compatible with python 3 only.
 
 ## Installation
 
